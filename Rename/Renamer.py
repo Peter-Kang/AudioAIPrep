@@ -1,6 +1,6 @@
 import uuid
 from pathlib import Path
-import os
+import os, errno
 
 class Renamer:
 
@@ -15,5 +15,9 @@ class Renamer:
                 #check if name exsits
                 if newFilePath.is_file():
                     newName = newName+str(uuid.uuid5())
-                os.rename(Path(self.path+'//'+filename), newFilePath)
+                try:
+                     os.rename(Path(self.path+'//'+filename), newFilePath)
+                except OSError as e:
+                    if e.errno != errno.EEXIST:
+                        raise
         print("Spaces removed")
