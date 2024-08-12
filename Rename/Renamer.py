@@ -18,6 +18,5 @@ class Renamer:
                 try:
                      os.rename(Path(self.path+'//'+filename), newFilePath)
                 except OSError as e:
-                    if e.errno != errno.EEXIST:
                         raise
         print("Spaces removed")
