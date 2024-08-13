@@ -1,4 +1,5 @@
 from Rename.Renamer import Renamer
+from AudioModification.AudioModification import AudioModification
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
 
@@ -7,4 +8,7 @@ def main():
     renamer:Renamer = Renamer(audioPath)
     renamer.removeSpace()
 
+    spliter:AudioModification = AudioModification(audioPath)
+    spliter.SplitDefault()
+    
 main()
