@@ -3,28 +3,27 @@ import os
 
 class TimeSplitter:
 
-    def __init__(self, inputPath:str, outputPath:str):
-        self.OutputPath = outputPath
+    def __init__(self, inputPath:str):
         self.InputPath = inputPath
 
     def split(self):
+        self.audioSplitter()
         print("Time Split Done")
 
-
-    def run_audiosplitter(self):
+    def audioSplitter(self):
         # Ask the user to select the audio file directory using the file explorer
-        input_directory = self.path
+        input_directory = self.InputPath
         # Check if a directory was selected
         if input_directory:
             # Iterate over the files in the directory
             for filename in os.listdir(input_directory):
                 if filename.endswith(".wav"):
                     file_path = os.path.join(input_directory, filename)
-                    self.split_audio_file(file_path)
+                    self.splitAudioFile(file_path)
         else:
             print("No directory selected.")
 
-    def split_audio_file(self, file_path, segment_duration=10):
+    def splitAudioFile(self, file_path, segment_duration=10):
         # Load the audio file
         sample_rate, audio_data = wavfile.read(file_path)
 
