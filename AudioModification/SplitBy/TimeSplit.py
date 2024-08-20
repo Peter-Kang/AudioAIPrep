@@ -16,7 +16,8 @@ class TimeSplitter:
         # Check if a directory was selected
         if input_directory:
             # Iterate over the files in the directory
-            for filename in os.listdir(input_directory):
+            files = os.listdir(self.InputPath)
+            for filename in files:
                 if filename.endswith(".wav"):
                     file_path = os.path.join(input_directory, filename)
                     self.splitAudioFile(file_path)
@@ -52,4 +53,4 @@ class TimeSplitter:
 
             print(f"Segment {i+1}/{num_segments} saved: {segment_filename}")
 
-        os.remove(file_path)
+        #os.remove(file_path)

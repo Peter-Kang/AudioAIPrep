@@ -8,7 +8,8 @@ class Renamer:
         self.path = path
 
     def removeSpace(self):
-        for filename in os.listdir(self.path):
+        files = os.listdir(self.path)
+        for filename in files:
             if ' ' in filename:
                 newName = filename.replace(' ', '_')
                 newFilePath = Path(self.path+'//'+newName)
