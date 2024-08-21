@@ -7,9 +7,8 @@ import json
 
 class SilenceSplitter:
 
-    def __init__(self, inputPath:str, outputPath:str):
+    def __init__(self, inputPath:str):
         self.InputPath = inputPath
-        self.OutputPath = outputPath
 
     def split(self):
         files = os.listdir(self.InputPath)
@@ -65,7 +64,7 @@ class SilenceSplitter:
         input_file = os.path.join(self.InputPath,fileName).replace("\\","/")
         if not input_file:
             raise ValueError("No file selected.")
-        output_dir = self.OutputPath
+        output_dir = self.InputPath
         min_silence_length = 0.6
         silence_threshold = 1e-4
         step_duration = 0.03/10

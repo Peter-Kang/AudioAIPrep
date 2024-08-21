@@ -20,7 +20,7 @@ class AudioModification:
             ConvertToWave(self.InputPath, self.Full_OutputPath).Convert()
 
             #split on silence
-            SilenceSplitter(self.InputPath,self.Full_OutputPath).split()
+            SilenceSplitter(self.Full_OutputPath).split()
 
             #split for over 10 seconds
             TimeSplitter(self.Full_OutputPath).split()

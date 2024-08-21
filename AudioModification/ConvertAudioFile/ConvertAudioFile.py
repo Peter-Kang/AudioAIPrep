@@ -16,7 +16,7 @@ class ConvertToWave:
                 # Read the audio file
                 sound = AudioSegment.from_file(fullPathToExistingFile) 
                 #output the 
-                sound.export(outputFilePath, format="wav") 
+                sound.export(outputFilePath, format='wav') 
 
             except OSError as e:
                 print(f"Error reading in {filename}")
