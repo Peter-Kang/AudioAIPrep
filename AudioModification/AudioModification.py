@@ -3,6 +3,7 @@ from typing import Final
 
 from AudioModification.SplitBy.SilenceSplit import SilenceSplitter
 from AudioModification.SplitBy.TimeSplit import TimeSplitter
+from ConvertAudioFile.ConvertAudioFile import ConvertToWave
 
 class AudioModification:
     SPLIT_PATH:Final[str] = "Split"
@@ -15,6 +16,8 @@ class AudioModification:
         try:
             if not os.path.exists(self.Full_OutputPath):
                 os.mkdir(self.Full_OutputPath)
+
+            ConvertToWave(self.InputPath, self.Full_OutputPath).Convert()
 
             #split on silence
             SilenceSplitter(self.InputPath,self.Full_OutputPath).split()

@@ -1,6 +1,4 @@
-import soundfile as sf
-import wave
-
+from pydub import AudioSegment 
 import os
 
 class ConvertToWave:
@@ -16,8 +14,9 @@ class ConvertToWave:
                 outputFilePath = os.path.join(self.OutputPath, os.path.splitext(filename)[0]+'.wav')
 
                 # Read the audio file
-
-
+                sound = AudioSegment.from_file(fullPathToExistingFile) 
+                #output the 
+                sound.export(outputFilePath, format="wav") 
 
             except OSError as e:
                 print(f"Error reading in {filename}")

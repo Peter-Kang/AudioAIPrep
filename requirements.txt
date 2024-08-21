@@ -1,2 +1,2 @@
-soundfile
+pydub
 wave
