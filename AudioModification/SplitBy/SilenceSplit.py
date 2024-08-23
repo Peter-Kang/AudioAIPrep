@@ -13,7 +13,8 @@ class SilenceSplitter:
     def split(self):
         files = os.listdir(self.InputPath)
         for fileNamer in files:
-            os.remove(self.run_audioSeg(fileName=fileNamer))
+            fileSplitFinished = self.run_audioSeg(fileName=fileNamer)
+            os.remove(fileSplitFinished)
         print("Silence Split Done")
 
 #helper functions

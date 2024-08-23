@@ -23,7 +23,7 @@ class AudioModification:
             SilenceSplitter(self.Full_OutputPath).split()
 
             #split for over 10 seconds
-            TimeSplitter(self.Full_OutputPath).split()
+            #TimeSplitter(self.Full_OutputPath).split()
 
         except OSError as e:
             if e.errno != errno.EEXIST:
