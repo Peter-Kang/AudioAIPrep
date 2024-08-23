@@ -1,2 +1,5 @@
 pydub
 wave
+numpy
+scipy
+tqdm
